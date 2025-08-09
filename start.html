@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8" />
+<title>開始前導向中…</title>
+<script>
+  // 產生並保存 PID（支援新舊瀏覽器）
+  const pid = (crypto.randomUUID?.() ||
+               Date.now().toString(36)+Math.random().toString(36).slice(2));
+  localStorage.setItem('PID', pid);
+
+  // 主入口表單（起始問卷）+ 預填系統識別碼
+  const mainBase = "https://docs.google.com/forms/d/e/1FAIpQLSdkkCBhqAvrBjFg4u-9tgUwTv4pgWNL2hjgCToUHbaH4bQcwQ/viewform";
+  const MAIN_ID  = "556587585";
+  const u = new URL(mainBase);
+  u.searchParams.set("usp","pp_url");
+  u.searchParams.set(`entry.${MAIN_ID}`, pid);
+
+  // 直接導向主入口（不留歷史紀錄）
+  window.location.replace(u.toString());
+</script>
+</head>
+<body><p>正在前往主入口問卷…</p></body>
+</html>
