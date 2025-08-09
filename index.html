@@ -10,7 +10,7 @@
   localStorage.setItem('PID', pid);
 
   // 主入口表單（起始問卷）+ 預填系統識別碼
-  const mainBase = "https://docs.google.com/forms/d/e/1FAIpQLSdkkCBhqAvrBjFg4u-9tgUwTv4pgWNL2hjgCToUHbaH4bQcwQ/viewform";
+  const mainBase = "https://docs.google.com/forms/d/e/1FAIpQLSdkkCBhqAvrBjFg4u-9tgUwTv4pgWNL2hjgCToUHbaH4bQcwQ/viewform?usp=dialog";
   const MAIN_ID  = "556587585";
   const u = new URL(mainBase);
   u.searchParams.set("usp","pp_url");
